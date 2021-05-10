@@ -1,7 +1,10 @@
-program_c++_kuliah
--untuk membuat tugas kuliah berupa program c++
+Nama : muhaymi nurdin  
+Npm : 2017051070
+Nama : Tri duta dewan tantra gata 
+Npm : 2017051030
+Link github:   https://github.com/muhaymi/kuliah-c-/blob/12b9e090333196d26802652c532f9962d2ded01e/program_c++_kuliah.txt
 
-program find word menggunakan bahasa c++ dalam bentuk matriks
+
 
 #include <iostream> //untuk input-output
 #include <string.h> //untuk str function
@@ -14,23 +17,23 @@ string RandomMatriks(char _input[]);
 int main(){
     string tebak;
     int byk;
-    
+
     cin >> byk;
 	cin.ignore();
-	
+
     string hasil[byk];
-    
+
     for(int i = 0; i < byk; i++){    
 	    getline(cin, tebak);
-	    
+
 	    char input[strlen(tebak.c_str())];
-	    
+
 	    strcpy(input, tebak.c_str());
-   		
+
    		hasil[i] = RandomMatriks(input);
 	}
-      
-	  
+
+
 	for(int i = 0; i < byk; i++){
 		cout << hasil[i] << endl;
 	}
@@ -42,6 +45,7 @@ string RandomMatriks(char _input[]){
     char temp[15];
     char randomReverse[15][15];
     char randomMatriks[15][15] = {
+		{'t', 'g', 'b', 'w', 'w', 'i', 'n' ,'t', 'e', 'r', 'w', 's', 'e', 's', 'n'},
         {'a', 'a', 'u', 'n', 't', 't', 'm', 'm', 'h', 'f', 'o', 'o', 'd', 'n', 'b'},
         {'j', 'l', 'w', 'c', 'q', 'l', 'd', 'z', 'm', 'p', 'm', 'v', 'd', 'm', 'r'},
         {'a', 's', 'a', 'q', 'm', 'q', 'u', 'w', 'v', 'v', 'b', 's', 'o', 'h', 'i'},
@@ -57,7 +61,7 @@ string RandomMatriks(char _input[]){
         {'p', 'd', 'c', 'r', 'z', 'm', 's', 'n', 'g', 'r', 'd', 'n', 'e', 'p', 'z'},
         {'o', 'h', 'n', 'k', 'z', 'w', 'a', 't', 'e', 'r', 'j', 'g', 't', 'r', 'a'},
         };
-  	
+
     for (int i = 0; i < 15; i++) // Horizontal
     {
       for (int j = 0; j < 15; j++)
@@ -69,7 +73,6 @@ string RandomMatriks(char _input[]){
         return "Ada";
       }
     }
-
     int x = strlen(temp);
     for (int i = 0; i < 15; i++) // Horizontal Reverse
     {
@@ -77,15 +80,15 @@ string RandomMatriks(char _input[]){
       {
         temp[j] = randomMatriks[i][j];
       }
-	  
+
 	  reverse(temp, temp + x);
       cek = strstr(temp, _input);
-      
+
       if(cek != NULL){
         return "Ada";
       }
     }
-  
+
     for (int i = 0; i < 15; i++) //Reverse Multidimensional matrix
     {
         int k = 14;
@@ -95,7 +98,7 @@ string RandomMatriks(char _input[]){
             k--;   
         }        
     }
-        
+
     for(int i = 0; i <= 14; i++) { //Vertical
 		for (int j = 0; j <= 14; j++) {
 			temp[j] = randomMatriks[j][i];
@@ -105,7 +108,7 @@ string RandomMatriks(char _input[]){
 			return "Ada";
 		}
 	}
-		
+
 	int JumlahHuruf = strlen(temp);
 	for (int i = 14; i >= 0; i--) { //Vertical Reverse
 		for (int j = 14; j >= 0; j--) {
@@ -117,7 +120,7 @@ string RandomMatriks(char _input[]){
 			return "Ada";
 		}
 	}
-  
+
     for (int i = 0; i < 15; i++) //Diagonal sebagian kiri-tengah ke atas-kanan
     {
         for (int j = 0; j < 15 - u; j++)
@@ -140,7 +143,7 @@ string RandomMatriks(char _input[]){
         {
             temp[j - u] = randomMatriks[j][j - u];
         }   
-        
+
         u--;
         reverse(temp, &temp[strlen(temp)]);
         cek = strstr(temp, _input);
@@ -171,9 +174,9 @@ string RandomMatriks(char _input[]){
         {
             temp[j - u] = randomReverse[j][j - u];
         }
-        
+
         u--;
-        
+
         reverse(temp, &temp[strlen(temp)]);
         cek = strstr(temp, _input);
         if(cek != NULL){
@@ -183,3 +186,6 @@ string RandomMatriks(char _input[]){
 
     return "Tidak Ada";
 }
+
+
+Terima kasih 
